@@ -1,0 +1,26 @@
+version: '3.4'
+
+services:
+    calculator_microservice:
+        build:
+            context: .
+            dockerfile: ./microservices/calculator/Dockerfile
+        expose:
+            - "5000"
+        ports:
+            - "0.0.0.0:5000:5000"
+        volumes:
+            - ./microservices/calculator/app:/app/app
+        network_mode: assistance_ai_network # Requiere ejecutarse docker network create --driver bridge assistance_ai_network
+
+    wikipedia_microservice:
+        build:
+            context: .
+            dockerfile: ./microservices/wikipedia/Dockerfile
+        expose:
+            - "5000"
+        ports:
+            - "0.0.0.0:5001:5000"
+        volumes:
+            - ./microservices/wikipedia/app:/app/app
+        network_mode: assistance_ai_network # Requiere ejecutarse docker network create --driver bridge assistance_ai_network
