@@ -6,4 +6,4 @@ app = Flask(__name__)
 api_bp = Blueprint('api', __name__)
 api = Api(api_bp)
 
-api.add_resource(CalculatorResourceV1, "/v1/calcualtor/<operation>/<num1>/<num2>")
+api.add_resource(CalculatorResourceV1, "/v1/calculator/<operation>/<num1>/<num2>")
