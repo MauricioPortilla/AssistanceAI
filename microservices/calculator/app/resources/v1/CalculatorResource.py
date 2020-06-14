@@ -6,9 +6,9 @@ class CalculatorResource(Resource):
             return { "status": "success", "data": (float(num1) + float(num2)) }, 200
         elif operation == "resta":
             return { "status": "success", "data": (float(num1) - float(num2)) }, 200
-        elif operation == "multiplicación":
+        elif operation == "multiplicacion":
             return { "status": "success", "data": (float(num1) * float(num2)) }, 200
-        elif operation == "división":
+        elif operation == "division":
             if float(num2) == 0:
                 return { "status": "failed", "message": "No se puede dividir por cero." }, 200
             return { "status": "success", "data": (float(num1) / float(num2)) }, 200
